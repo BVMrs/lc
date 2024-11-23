@@ -1,3 +1,4 @@
+package g75;
 
 public class diameterbinarytreeeg75easy {
   static int max = 0;

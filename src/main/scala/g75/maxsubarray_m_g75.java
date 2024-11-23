@@ -1,10 +1,12 @@
+package g75;
+
 public class maxsubarray_m_g75 {
   
-  public static void main(String [] args) {
-    int [] nums = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
-    int result = Solution.maxSubArray(nums);
-    System.out.println(result);
-  }
+    public static void main(String [] args) {
+      int [] nums = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+      int result = Solution.maxSubArray(nums);
+      System.out.println(result);
+    }
   
   static class Solution {
     public static int maxSubArray(int[] nums) {

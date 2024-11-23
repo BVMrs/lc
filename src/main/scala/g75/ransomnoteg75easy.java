@@ -1,3 +1,5 @@
+package g75;
+
 import java.util.HashMap;
 
 public class ransomnoteg75easy {

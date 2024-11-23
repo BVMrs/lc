@@ -1,3 +1,5 @@
+package g75;
+
 public class climbstairseg75easy {
     public static void main (String [] args) {
 

@@ -1,11 +1,14 @@
+package g75;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class mergeinterval_m_g75 {
+  // todo: use a linked list to represent the new array
   public static void main(String [] args) {
-    int [][] nums = {{1,2},{3,5},{6,7},{8,10},{12,16}};
-    int [] newInterval = { 4,8 };
+    int [][] nums = {{1,3},{6,9}};
+    int [] newInterval = { 2,5 };
     int[][] result = insert(nums, newInterval);
     System.out.println(Arrays.deepToString(result));
   }
@@ -17,6 +20,7 @@ public class mergeinterval_m_g75 {
     int i = 0;
     while (newInterval[0] >= intervals[i][0]) {
       newIntervals[i] = intervals[i];
+      i++;
     }
     
     int j = i + 1;
@@ -34,12 +38,13 @@ public class mergeinterval_m_g75 {
       }
     } else {
       // there is at least one overlaps
-      while (newInterval[1] >= intervals[j][1]) {
+      while (newInterval[1] > intervals[j][0] && newInterval[1] < intervals[j][1]) {
         j++; // only increment the old array's index
       }
       
       newIntervals[i] = new int[]{newInterval[0], intervals[j][1]};
       i++;
+      j++;
       
       while(j < intervals.length) {
         newIntervals[i] = intervals[j];
