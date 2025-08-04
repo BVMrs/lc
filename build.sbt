@@ -6,3 +6,5 @@ lazy val root = (project in file("."))
   .settings(
     name := "leetcode"
   )
+
+libraryDependencies += "com.squareup.okhttp3" % "okhttp" % "4.12.0"
