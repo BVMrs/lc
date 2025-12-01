@@ -1,7 +1,6 @@
-package aoc2024;
+package aoc2025;
 
 import kotlin.jvm.functions.Function1;
-import kotlin.jvm.functions.Function2;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -13,7 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Utils {
-  public static final Function2<String, String, String> AOC_URL_FUN = (day, year) -> "https://adventofcode.com/" + year + "/day/" + day + "/input";
+  public static final Function1<String, String> AOC_URL_FUN = (day) -> "https://adventofcode.com/2025/day/" + day + "/input";
   
   // Method to send a GET request and return the response as a string
   public static String getInput(String url) throws IOException {
@@ -23,7 +22,7 @@ public class Utils {
     // Build the request
     Request request = new Request.Builder()
         .url(url)
-        .addHeader("cookie", "session=53616c7465645f5fee93dd1f280d59eb3c24564246e17824fe109f06118b591a8281ec95b113412586934ac70b8e8fe124e4b7f42f6cabe3881a32dd17012c24")
+        .addHeader("cookie", "session=53616c7465645f5faeac5b462bbaeecb2b30e622ea375c8c763a65a631d4474d322a4cb56622d16ed9c8c80153f96b6e117f12ca93644e00ae6c5427eac2175a")
         .get()
         .build();
     
@@ -71,20 +70,19 @@ public class Utils {
   }
   
   public static String readFileToString(String filePath) throws IOException {
-      // Read all bytes from the file and convert them to a string
-      return new String(Files.readAllBytes(Paths.get(filePath)));
+    // Read all bytes from the file and convert them to a string
+    return new String(Files.readAllBytes(Paths.get(filePath)));
   }
   
   public static String loadContents(String day, String stars, String year) throws IOException {
     String path = "C:\\Users\\Marius\\IdeaProjects\\leetcode\\src\\main\\scala\\aoc" + year + "\\resources\\d" + day + "_s" + stars + ".txt";
     
     if (!checkIfFileExists(path)) {
-      String response = getInput(AOC_URL_FUN.invoke(day,year));
+      String response = getInput(AOC_URL_FUN.invoke(day));
       writeToFileIfDoesNotExists("C:\\Users\\Marius\\IdeaProjects\\leetcode\\src\\main\\scala\\aoc" + year + "\\resources\\d" + day + "_s" + stars + ".txt", response);
       return response;
     } else {
       return readFileToString(path);
     }
   }
-  
 }

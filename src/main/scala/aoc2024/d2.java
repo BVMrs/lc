@@ -7,7 +7,7 @@ import static aoc2024.Utils.loadContents;
 
 public class d2 {
   public static void main (String [] args) throws IOException {
-    String inputs = loadContents("2", "1");
+    String inputs = loadContents("2", "1", "2024");
     
     String [] rows = inputs.split("\n");
     

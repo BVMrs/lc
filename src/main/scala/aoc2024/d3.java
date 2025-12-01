@@ -1,7 +1,5 @@
 package aoc2024;
 
-import scala.Int;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +10,7 @@ import static aoc2024.Utils.loadContents;
 
 public class d3 {
   public static void main(String[] args) throws IOException {
-    String inputs = loadContents("3", "1");
+    String inputs = loadContents("3", "1", "2024");
     
     Solution ans = solution(inputs);
 

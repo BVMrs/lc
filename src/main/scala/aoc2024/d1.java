@@ -1,6 +1,5 @@
 package aoc2024;
 
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
@@ -8,7 +7,7 @@ import static aoc2024.Utils.*;
 
 public class d1 {
   public static void main (String [] args) throws IOException {
-    String inputs = loadContents("1", "1");
+    String inputs = loadContents("1", "1", "2024");
     System.out.println(inputs);
     
     List<Integer> l1 = new LinkedList<>();
